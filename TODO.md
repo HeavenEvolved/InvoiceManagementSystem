@@ -2,8 +2,8 @@
 
 ## 1. Database Setup (MySQL)
 
-- [ ] **DB-001**: Create a MySQL database for the system.
-- [ ] **DB-002**: Design tables for the following entities:
+- [x] **DB-001**: Create a MySQL database for the system.
+- [x] **DB-002**: Design tables for the following entities:
 
   - **Roles**: Master table for user roles.
 
