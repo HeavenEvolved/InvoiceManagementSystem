@@ -1,1 +1,1 @@
-# **Inventory Management System**
+# **MySQL Implementation**

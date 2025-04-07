@@ -5,8 +5,16 @@ use cia_002;
 -- -- Roles Table
 create table roles (
 	id int auto_increment primary key,
-	role_name enum('superadmin', 'customer admin', 'vendor admin', 'customer', 'vendor') not null unique
+	role_name char(20) not null unique
 );
+
+insert into roles (role_name)
+values
+	("superadmin"),
+    ("customer_admin"),
+    ("vendor_admin"),
+    ("customer"),
+    ("vendor");
 
 -- -- Status Table
 create table statuses (
