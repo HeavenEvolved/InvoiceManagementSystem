@@ -86,7 +86,9 @@ def generate_invoice_pdf(invoice_details, invoice_items, file_path):
     pdf.add_page()
     pdf.set_font("Arial", size=12)
 
-    pdf.cell(200, 10, txt=f"Invoice #{invoice_details[0]}", ln=True, align='C')
+    # Validate unique invoice number
+    unique_invoice_number = invoice_details[5] if len(invoice_details) > 5 else "N/A"
+    pdf.cell(200, 10, txt=f"Invoice #{invoice_details[0]} - Unique ID: {unique_invoice_number}", ln=True, align='C')
     pdf.cell(200, 10, txt=f"Customer ID: {invoice_details[1]}", ln=True)
     pdf.cell(200, 10, txt=f"Invoice Date: {invoice_details[2]}", ln=True)
     pdf.cell(200, 10, txt=f"Total Amount: {invoice_details[3]}", ln=True)

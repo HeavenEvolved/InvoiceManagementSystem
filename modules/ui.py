@@ -143,7 +143,7 @@ def display_manage_invoices(db_manager_instance, user_id, user_role):
 
                 # Fetch invoice details and items using invoice_number
                 invoice_details_query = """
-                    SELECT i.id, i.customer_id, i.invoice_date, i.total_amount, s.status_name
+                    SELECT i.id, i.customer_id, i.invoice_date, i.total_amount, s.status_name, i.invoice_number
                     FROM invoices i
                     JOIN statuses s ON i.status_id = s.id
                     WHERE i.invoice_number = %s
@@ -185,10 +185,15 @@ def display_manage_invoices(db_manager_instance, user_id, user_role):
                         updated_on = NOW()
                     WHERE invoice_number = %s
                 """
-                if db_manager_instance.execute_query(pay_invoice_query, (user_id, invoice_number), commit=True):
+                try:
+                    db_manager_instance.execute_query(pay_invoice_query, params=(user_id, invoice_number), commit=True)
+                    # If no exception is raised, assume the query was successful
                     st.success(f"Invoice #{invoice_number} marked as paid successfully!")
-                else:
-                    st.error(f"Failed to mark Invoice #{invoice_number} as paid.")
+                    # Set a query parameter to trigger a delayed rerun
+                    st.experimental_set_query_params(rerun="true")
+                except Exception as e:
+                    # Handle any exceptions that occur during query execution
+                    st.error(f"Failed to mark Invoice #{invoice_number} as paid. Error: {str(e)}")
     else:
         st.info("No invoices found.")
 
