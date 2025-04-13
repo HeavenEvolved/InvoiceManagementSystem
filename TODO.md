@@ -180,10 +180,10 @@
 
 ## 4. Additional Features
 
-- [ ] **AF-001**: Add user authentication with hashed passwords.
-- [ ] **AF-002**: Generate PDF invoices using `fpdf`.
-- [ ] **AF-003**: Add vendor information to invoice PDFs.
-- [ ] **AF-004**: Add functionality to handle inactive users.
+- [x] **AF-001**: Add user authentication with hashed passwords.
+- [x] **AF-002**: Generate PDF invoices using `fpdf`.
+- [x] **AF-003**: Add vendor information to invoice PDFs.
+- [x] **AF-004**: Add functionality to handle inactive users.
 
 ## 5. Testing and Deployment
 
