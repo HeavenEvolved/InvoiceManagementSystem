@@ -106,10 +106,15 @@
     );
     ```
 
+  - **Cart**: To manage user carts.
+
+- [x] **DB-003**: Add constraints and relationships between tables.
+- [x] **DB-004**: Add sample data for roles and a superadmin user.
+
 ## 2. Backend Logic (Python)
 
-- [ ] **BE-001**: Set up a Python environment and install necessary libraries (`mysql-connector-python`, `streamlit`, etc.).
-- [ ] **BE-002**: Create a database connection utility.
+- [x] **BE-001**: Set up a Python environment and install necessary libraries (`mysql-connector-python`, `streamlit`, `bcrypt`, etc.).
+- [x] **BE-002**: Create a database manager class for executing queries.
 
   ```python
   # db_connection.py
@@ -124,50 +129,64 @@
       )
   ```
 
-- [ ] **BE-003**: Implement CRUD operations for each table:
-  - Add, update, delete, and fetch users.
-  - Add, update, delete, and fetch clients.
-  - Add, update, delete, and fetch invoices and their items.
-  - Add, update, delete, and fetch roles, statuses, and items.
+- [x] **BE-003**: Implement CRUD operations for:
+  - Users
+  - Items
+  - Invoices and their items
+  - Cart management
+- [x] **BE-004**: Add functionality to generate unique invoice numbers.
+- [x] **BE-005**: Add functionality to update stock when invoices are generated.
+- [x] **BE-006**: Add password hashing and verification using `bcrypt`.
 
 ## 3. Frontend Implementation (Streamlit)
 
-- [ ] **FE-001**: Create a Streamlit app structure.
+- [ ] **FE-001**: Create a Streamlit app structure with sidebar navigation.
 
   ```python
   import streamlit as st
 
   st.sidebar.title("Invoice Management System")
-  menu = st.sidebar.radio("Navigation", ["Dashboard", "Clients", "Invoices"])
+  menu = st.sidebar.radio("Navigation", ["Dashboard", "Clients", "Invoices", "Manage Users", "Manage Items", "Manage Cart", "Manage Profile"])
   ```
 
 - [ ] **FE-002**: Implement the **Dashboard**:
+  - Display a welcome message based on the user role.
   - Display summary statistics (e.g., total invoices, total revenue).
   - Use Streamlit charts for visualizations.
 
-- [ ] **FE-003**: Implement the **Clients** section:
-  - Form to add/edit client details.
-  - Table to display all clients with options to edit or delete.
+- [ ] **FE-003**: Implement the **Manage Users** section:
+  - Add, edit, and deactivate users.
+  - Display a table of all users.
 
-- [ ] **FE-004**: Implement the **Invoices** section:
-  - Form to create/edit invoices and add items.
-  - Table to display all invoices with options to view, edit, or delete.
+- [ ] **FE-004**: Implement the **Manage Items** section:
+  - Add new items with vendor selection (for superadmins).
+  - Update stock for existing items.
+  - Display a table of all items.
 
-    ```python
-    if menu == "Invoices":
-        st.title("Invoices")
-        # Add logic to display and manage invoices
-    ```
+- [ ] **FE-005**: Implement the **Manage Invoices** section:
+  - Display a table of invoices based on user role.
+  - Generate PDF invoices with vendor details for each item.
+  - Mark invoices as paid.
+
+- [ ] **FE-006**: Implement the **Manage Cart** section:
+  - Add items to the cart.
+  - Display cart contents with total amount.
+  - Generate invoices from the cart.
+
+- [ ] **FE-007**: Implement the **Manage Profile** section:
+  - Update user profile details.
+
+- [ ] **FE-008**: Implement the **Customer Registration** form.
 
 ## 4. Additional Features
 
-- [ ] **AF-001**: Add user authentication (e.g., login/logout functionality).
-- [ ] **AF-002**: Implement search and filter functionality for clients and invoices.
-- [ ] **AF-003**: Generate PDF for invoices using a library like `reportlab` or `fpdf`.
-- [ ] **AF-004**: Add email functionality to send invoices to clients.
+- [ ] **AF-001**: Add user authentication with hashed passwords.
+- [ ] **AF-002**: Generate PDF invoices using `fpdf`.
+- [ ] **AF-003**: Add vendor information to invoice PDFs.
+- [ ] **AF-004**: Add functionality to handle inactive users.
 
 ## 5. Testing and Deployment
 
-- [ ] **TD-001**: Write unit tests for backend logic.
-- [ ] **TD-002**: Test the Streamlit app for usability and bugs.
-- [ ] **TD-003**: Deploy the app using a platform like Heroku or Streamlit Cloud.
+- [ ] **TD-001**: Test database queries for correctness.
+- [ ] **TD-002**: Test Streamlit app for usability and bugs.
+- [ ] **TD-003**: Deploy the app using a platform like Streamlit Cloud or Heroku.
