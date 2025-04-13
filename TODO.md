@@ -140,7 +140,7 @@
 
 ## 3. Frontend Implementation (Streamlit)
 
-- [ ] **FE-001**: Create a Streamlit app structure with sidebar navigation.
+- [x] **FE-001**: Create a Streamlit app structure with sidebar navigation.
 
   ```python
   import streamlit as st
@@ -149,41 +149,41 @@
   menu = st.sidebar.radio("Navigation", ["Dashboard", "Clients", "Invoices", "Manage Users", "Manage Items", "Manage Cart", "Manage Profile"])
   ```
 
-- [ ] **FE-002**: Implement the **Dashboard**:
+- [x] **FE-002**: Implement the **Dashboard**:
   - Display a welcome message based on the user role.
   - Display summary statistics (e.g., total invoices, total revenue).
   - Use Streamlit charts for visualizations.
 
-- [ ] **FE-003**: Implement the **Manage Users** section:
+- [x] **FE-003**: Implement the **Manage Users** section:
   - Add, edit, and deactivate users.
   - Display a table of all users.
 
-- [ ] **FE-004**: Implement the **Manage Items** section:
+- [x] **FE-004**: Implement the **Manage Items** section:
   - Add new items with vendor selection (for superadmins).
   - Update stock for existing items.
   - Display a table of all items.
 
-- [ ] **FE-005**: Implement the **Manage Invoices** section:
+- [x] **FE-005**: Implement the **Manage Invoices** section:
   - Display a table of invoices based on user role.
   - Generate PDF invoices with vendor details for each item.
   - Mark invoices as paid.
 
-- [ ] **FE-006**: Implement the **Manage Cart** section:
+- [x] **FE-006**: Implement the **Manage Cart** section:
   - Add items to the cart.
   - Display cart contents with total amount.
   - Generate invoices from the cart.
 
-- [ ] **FE-007**: Implement the **Manage Profile** section:
+- [x] **FE-007**: Implement the **Manage Profile** section:
   - Update user profile details.
 
-- [ ] **FE-008**: Implement the **Customer Registration** form.
+- [x] **FE-008**: Implement the **Customer Registration** form.
 
 ## 4. Additional Features
 
-- [ ] **AF-001**: Add user authentication with hashed passwords.
-- [ ] **AF-002**: Generate PDF invoices using `fpdf`.
-- [ ] **AF-003**: Add vendor information to invoice PDFs.
-- [ ] **AF-004**: Add functionality to handle inactive users.
+- [x] **AF-001**: Add user authentication with hashed passwords.
+- [x] **AF-002**: Generate PDF invoices using `fpdf`.
+- [x] **AF-003**: Add vendor information to invoice PDFs.
+- [x] **AF-004**: Add functionality to handle inactive users.
 
 ## 5. Testing and Deployment
 
